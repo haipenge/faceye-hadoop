@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+   <property>
+       <name>business.hdfs.dir</name>
+       <value>/tools/hadoop/data/datanode</value>
+         <!--
+        <value>/hadoop-data/crawl</value>
+        -->
+   </property>
+   <property>
+       <name>faceye.third.party.lib</name>
+       <!-- Root of hdfs -->
+       <value>lib</value>
+   </property>
+</configuration>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="default.manager" template="/component/core/template/manager/default_template.jsp">
+	    <put-attribute name="default-header" value="/component/core/template/manager/default_header.jsp"></put-attribute>
+	    <put-attribute name="default-center" value="default.center"></put-attribute>
+	    <put-attribute name="default-footer" value="/component/core/template/manager/default_footer.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="default.center" template="/component/core/template/manager/default_center_template.jsp">
+	    <put-attribute name="default-center-left" value="/component/core/template/manager/default_center_left.jsp"></put-attribute>
+	    <put-attribute name="default-center-right" value="/component/core/template/manager/default_center_right.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Public Message -->
+	<definition name="default.msg" extends="default.manager">
+	   <put-attribute name="default-center" value="default.msg.center"></put-attribute>
+	</definition>
+	<definition name="default.msg.center" extends="default.center">
+	    <put-attribute name="default-center" value="/component/core/msg/default.jsp"></put-attribute>
+	</definition>
+
+	<!-- 默认空白页面 -->
+	<definition name="default.blank" template="/component/core/template/manager/default_blank_template.jsp">
+	    <put-attribute name="default-center" value="/component/core/template/manager/default_blank_center.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="default.error" extends="default.blank">
+	    <put-attribute name="default-center" value="/component/core/error/default.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>

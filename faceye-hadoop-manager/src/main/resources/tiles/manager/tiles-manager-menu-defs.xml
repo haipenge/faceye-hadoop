@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:security 业务对像:Menu 管理后台 tiles模板配置 -->
+    <!-- 作者:haipege -->
+    <!-- Menu 管理 首页(列表页) -->
+	<definition name="security.menu.manager" extends="default.manager">
+	    <put-attribute name="default-center" value="security.menu.center"></put-attribute>
+	</definition>
+	<definition name="security.menu.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/security/menu/menu_center.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Menu 新增,编辑页面 -->
+	<definition name="security.menu.update" extends="default.manager">
+	    <put-attribute name="default-center" value="security.menu.update.center"></put-attribute>
+	</definition>
+	<definition name="security.menu.update.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/security/menu/menu_update.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Menu 明细页 -->
+	<definition name="security.menu.detail" extends="default.manager">
+	    <put-attribute name="default-center" value="security.menu.detail.center"></put-attribute>
+	</definition>
+	<definition name="security.menu.detail.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/security/menu/menu_detail.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 菜单授权页面 -->
+	<definition name="security.menu.auth" extends="default.manager">
+	    <put-attribute name="default-center" value="security.menu.auth.center"></put-attribute>
+	</definition>
+	<definition name="security.menu.auth.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/security/menu/role_auth_menu.jsp"></put-attribute>
+	</definition>
+	
+	
+</tiles-definitions>

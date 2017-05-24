@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:security 业务对像:Resource 管理后台 tiles模板配置 -->
+    <!-- 作者:haipege -->
+    <!-- Resource 管理 首页(列表页) -->
+	<definition name="security.resource.manager" extends="default.manager">
+	    <put-attribute name="default-center" value="security.resource.center"></put-attribute>
+	</definition>
+	<definition name="security.resource.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/security/resource/resource_center.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Resource 新增,编辑页面 -->
+	<definition name="security.resource.update" extends="default.manager">
+	    <put-attribute name="default-center" value="security.resource.update.center"></put-attribute>
+	</definition>
+	<definition name="security.resource.update.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/security/resource/resource_update.jsp"></put-attribute>
+	</definition>
+	
+	<!-- @entiyt.name@ 明细页 -->
+	<definition name="security.resource.detail" extends="default.manager">
+	    <put-attribute name="default-center" value="security.resource.detail.center"></put-attribute>
+	</definition>
+	<definition name="security.resource.detail.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/security/resource/resource_detail.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>

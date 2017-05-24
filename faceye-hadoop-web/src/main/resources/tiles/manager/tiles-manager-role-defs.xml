@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:security 业务对像:Role 管理后台 tiles模板配置 -->
+    <!-- 作者:haipege -->
+    <!-- Role 管理 首页(列表页) -->
+	<definition name="security.role.manager" extends="default.manager">
+	    <put-attribute name="default-center" value="security.role.center"></put-attribute>
+	</definition>
+	<definition name="security.role.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/security/role/role_center.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Role 新增,编辑页面 -->
+	<definition name="security.role.update" extends="default.manager">
+	    <put-attribute name="default-center" value="security.role.update.center"></put-attribute>
+	</definition>
+	<definition name="security.role.update.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/security/role/role_update.jsp"></put-attribute>
+	</definition>
+	
+	<!-- @entiyt.name@ 明细页 -->
+	<definition name="security.role.detail" extends="default.manager">
+	    <put-attribute name="default-center" value="security.role.detail.center"></put-attribute>
+	</definition>
+	<definition name="security.role.detail.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/security/role/role_detail.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Auth resource 2 Role -->
+	<definition name="security.role.auth" extends="default.manager">
+	    <put-attribute name="default-center" value="security.role.auth.center"></put-attribute>
+	</definition>
+	<definition name="security.role.auth.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/security/role/role_auth_resource.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>
