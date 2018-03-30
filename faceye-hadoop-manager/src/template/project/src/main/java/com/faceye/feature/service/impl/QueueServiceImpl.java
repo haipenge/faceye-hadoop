@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.faceye.feature.service.QueueService;
-import com.faceye.feature.util.ServiceException;
+ 
 
 public abstract class QueueServiceImpl<T> implements QueueService<T> {
 
@@ -15,14 +15,14 @@ public abstract class QueueServiceImpl<T> implements QueueService<T> {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	synchronized public T get() throws ServiceException {
+	synchronized public T get()   {
 		T o = (T) this.getQueue().poll();
 		return o;
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void add(T o) throws ServiceException {
+	public void add(T o)   {
 		this.getQueue().add(o);
 	}
 
@@ -30,20 +30,20 @@ public abstract class QueueServiceImpl<T> implements QueueService<T> {
 	 * 添加整个集合
 	 * @todo
 	 * @param collections
-	 * @throws ServiceException
+	 * @ 
 	 * @author:@haipenge
 	 * haipenge@gmail.com
 	 * 2014年1月2日
 	 */
 	@SuppressWarnings("unchecked")
-	public void addAll(Collection<T> collections) throws ServiceException {
+	public void addAll(Collection<T> collections)   {
 		this.getQueue().addAll(collections);
 	}
 
 	/**
 	 * 是否为空
 	 */
-	public Boolean isEmpty() throws ServiceException {
+	public Boolean isEmpty()   {
 		Boolean res = Boolean.TRUE;
 		if (this.getQueue() != null && this.getQueue().size() > 0) {
 			res = Boolean.FALSE;
@@ -51,7 +51,7 @@ public abstract class QueueServiceImpl<T> implements QueueService<T> {
 		return res;
 	}
 
-	public int getSize() throws ServiceException {
+	public int getSize()   {
 		int size = 0;
 		if (!isEmpty()) {
 			size = this.getQueue().size();

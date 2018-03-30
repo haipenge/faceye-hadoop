@@ -28,7 +28,7 @@ import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.BaseService;
 import com.faceye.feature.service.Reporter;
 import com.faceye.feature.service.SequenceService;
-import com.faceye.feature.util.ServiceException;
+ 
 import com.mysema.query.types.OrderSpecifier;
 import com.mysema.query.types.Predicate;
 import com.mysema.query.types.expr.NumberExpression;
@@ -61,7 +61,7 @@ public abstract class BaseMongoServiceImpl<T, ID extends Serializable, D extends
 	}
 
 	@Override
-	public void save(T entity) throws ServiceException {
+	public void save(T entity)   {
 		try {
 			ID id = (ID) PropertyUtils.getProperty(entity, "id");
 			if (id == null) {
@@ -78,7 +78,7 @@ public abstract class BaseMongoServiceImpl<T, ID extends Serializable, D extends
 	}
 
 	@Override
-	public void save(Iterable<T> entities) throws ServiceException {
+	public void save(Iterable<T> entities)   {
 		if (entities != null) {
 			Iterator<T> iterator = entities.iterator();
 			while (iterator.hasNext()) {
@@ -102,48 +102,48 @@ public abstract class BaseMongoServiceImpl<T, ID extends Serializable, D extends
 	}
 
 	@Override
-	public void saveAndFlush(T entity) throws ServiceException {
+	public void saveAndFlush(T entity)   {
 		save(entity);
 	}
 
 	@Override
-	public void remove(ID id) throws ServiceException {
+	public void remove(ID id)   {
 		dao.delete(id);
 	}
 
 	@Override
-	public void remove(T entity) throws ServiceException {
+	public void remove(T entity)   {
 		dao.delete(entity);
 	}
 
 	@Override
-	public void removeAll() throws ServiceException {
+	public void removeAll()   {
 		dao.deleteAll();
 		;
 	}
 
 	@Override
-	public void removeAllInBatch() throws ServiceException {
+	public void removeAllInBatch()   {
 		this.removeAll();
 	}
 
 	@Override
-	public void removeInBatch(Iterable<T> entities) throws ServiceException {
+	public void removeInBatch(Iterable<T> entities)   {
 		this.dao.delete(entities);
 	}
 
 	@Override
-	public T get(ID id) throws ServiceException {
+	public T get(ID id)   {
 		return dao.findOne(id);
 	}
 
 	@Override
-	public List<T> getAll() throws ServiceException {
+	public List<T> getAll()   {
 		return dao.findAll();
 	}
 
 	@Override
-	public List<T> getAll(Iterable<ID> ids) throws ServiceException {
+	public List<T> getAll(Iterable<ID> ids)   {
 		List<T> res = null;
 		Iterable<T> its = dao.findAll(ids);
 		res = (List) its;
@@ -151,7 +151,7 @@ public abstract class BaseMongoServiceImpl<T, ID extends Serializable, D extends
 	}
 
 	@Override
-	public Page<T> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<T> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}

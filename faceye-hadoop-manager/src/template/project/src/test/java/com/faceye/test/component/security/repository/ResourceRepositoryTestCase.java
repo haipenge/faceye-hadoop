@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.security.entity.Resource;
 import com.faceye.component.security.repository.jpa.ResourceRepository;
@@ -34,24 +34,24 @@ public class ResourceRepositoryTestCase extends BaseRepositoryTestCase {
 		Resource entity = new Resource();
 		this.resourceRepository.save(entity);
 		Iterable<Resource> entities = this.resourceRepository.findAll();
-		Assert.isTrue(entities.iterator().hasNext());
+		Assert.assertTrue(entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		Resource entity = new Resource();
 		this.resourceRepository.save(entity);
-        this.resourceRepository.delete(entity.getId());
+        this.resourceRepository.deleteById(entity.getId());
         Iterable<Resource> entities = this.resourceRepository.findAll();
-		Assert.isTrue(!entities.iterator().hasNext());
+		Assert.assertTrue(!entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		Resource entity = new Resource();
 		this.resourceRepository.save(entity);
-		Resource resource=this.resourceRepository.findOne(entity.getId());
-		Assert.isTrue(resource!=null);
+		Resource resource=this.resourceRepository.findById(entity.getId()).get();
+		Assert.assertTrue(resource!=null);
 	}
 
 	

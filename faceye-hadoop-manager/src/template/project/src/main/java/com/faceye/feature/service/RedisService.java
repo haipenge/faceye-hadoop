@@ -5,7 +5,7 @@ import java.util.Set;
 
 import org.springframework.data.redis.core.RedisTemplate;
 
-import com.faceye.feature.util.ServiceException;
+ 
 
 
 /**
@@ -16,100 +16,100 @@ import com.faceye.feature.util.ServiceException;
  */
 
 public interface RedisService {
-	public RedisTemplate getRedisTemplate() throws ServiceException;
+	public RedisTemplate getRedisTemplate()  ;
 	
 	/**
 	 * 设置List
 	 * @todo
 	 * @param key
 	 * @param values
-	 * @throws ServiceException
+	 * @ 
 	 * @author:@haipenge
 	 * haipenge@gmail.com
 	 * 2014年4月13日
 	 */
-	public void rPush(Object key,List values) throws ServiceException;
+	public void rPush(Object key,List values)  ;
 	
 	/**
 	 * 设置一个值
 	 * @todo
 	 * @param key
 	 * @param value
-	 * @throws ServiceException
+	 * @ 
 	 * @author:@haipenge
 	 * haipenge@gmail.com
 	 * 2014年4月13日
 	 */
-	public void rPush(Object key,Object value) throws ServiceException;
+	public void rPush(Object key,Object value)  ;
 	
 	/**
 	 * 读取list
 	 * @todo
 	 * @param key
 	 * @return
-	 * @throws ServiceException
+	 * @ 
 	 * @author:@haipenge
 	 * haipenge@gmail.com
 	 * 2014年4月13日
 	 */
-	public List getList(Object key) throws ServiceException;
+	public List getList(Object key)  ;
 	
 	/**
 	 * 设置 key:value
 	 * @todo
 	 * @param key
 	 * @param value
-	 * @throws ServiceException
+	 * @ 
 	 * @author:@haipenge
 	 * haipenge@gmail.com
 	 * 2014年4月13日
 	 */
-	public void set(Object key,Object value) throws ServiceException;
+	public void set(Object key,Object value)  ;
 	
 	/**
 	 * 取值
 	 * @todo
 	 * @param key
 	 * @return
-	 * @throws ServiceException
+	 * @ 
 	 * @author:@haipenge
 	 * haipenge@gmail.com
 	 * 2014年4月13日
 	 */
-	public Object get(Object key) throws ServiceException;
+	public Object get(Object key)  ;
 	
 	/**
 	 * 是否存在某一Key.
 	 * @todo
 	 * @param key
 	 * @return
-	 * @throws ServiceException
+	 * @ 
 	 * @author:@haipenge
 	 * haipenge@gmail.com
 	 * 2014年4月14日
 	 */
-	public Boolean exist(Object key) throws ServiceException;
+	public Boolean exist(Object key)  ;
 	
 	/**
 	 * 取得Key列表
 	 * @todo
 	 * @param pattern
 	 * @return
-	 * @throws ServiceException
+	 * @ 
 	 * @author:@haipenge
 	 * haipenge@gmail.com
 	 * 2014年4月14日
 	 */
-	public Set getKeys(Object pattern) throws ServiceException;
+	public Set getKeys(Object pattern)  ;
 	
 	/**
 	 * 清除缓存
 	 * @todo
 	 * @param key
-	 * @throws ServiceException
+	 * @ 
 	 * @author:@haipenge
 	 * haipenge@gmail.com
 	 * 2014年5月7日
 	 */
-	public void delete(Object key) throws ServiceException;
+	public void delete(Object key)  ;
 }

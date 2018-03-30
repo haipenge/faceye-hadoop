@@ -10,7 +10,7 @@ import org.springframework.data.domain.Page;
 
 import com.faceye.feature.repository.jpa.BaseRepository;
 import com.faceye.feature.service.BaseService;
-import com.faceye.feature.util.ServiceException;
+ 
 
 import org.springframework.context.support.ResourceBundleMessageSource;
 
@@ -31,57 +31,57 @@ public class BaseServiceImpl<T, ID extends Serializable, D extends BaseRepositor
 	}
 
 	@Override
-	public void save(T entity) throws ServiceException {
+	public void save(T entity)   {
 		dao.save(entity);
 	}
 
 	@Override
-	public void save(Iterable<T> entities) throws ServiceException {
+	public void save(Iterable<T> entities)   {
 		dao.save(entities);
 	}
 
 	@Override
-	public void saveAndFlush(T entity) throws ServiceException {
+	public void saveAndFlush(T entity)   {
 		dao.saveAndFlush(entity);
 	}
 
 	@Override
-	public T get(ID id) throws ServiceException {
+	public T get(ID id)   {
 		return dao.findOne(id);
 	}
 
 	@Override
-	public void remove(ID id) throws ServiceException {
+	public void remove(ID id)   {
 		dao.delete(id);
 	}
 
 	@Override
-	public void remove(T entity) throws ServiceException {
+	public void remove(T entity)   {
 		dao.delete(entity);
 	}
 
 	@Override
-	public void removeAll() throws ServiceException {
+	public void removeAll()   {
 		dao.deleteAll();
 	}
 
 	@Override
-	public void removeAllInBatch() throws ServiceException {
+	public void removeAllInBatch()   {
 		dao.deleteAllInBatch();
 	}
 
 	@Override
-	public void removeInBatch(Iterable<T> entities) throws ServiceException {
+	public void removeInBatch(Iterable<T> entities)   {
 		dao.deleteInBatch(entities);
 	}
 
 	@Override
-	public List<T> getAll() throws ServiceException {
+	public List<T> getAll()   {
 		return dao.findAll();
 	}
 
 	@Override
-	public List<T> getAll(Iterable<ID> ids) throws ServiceException {
+	public List<T> getAll(Iterable<ID> ids)   {
 		return dao.findAll(ids);
 	}
 
@@ -90,8 +90,8 @@ public class BaseServiceImpl<T, ID extends Serializable, D extends BaseRepositor
 	 * 分页查询
 	 */
 	@Override
-	public Page<T> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
-		return dao.getPage(searchParams, page, size);
+	public Page<T> getPage(Map<String, Object> searchParams, int page, int size)   {
+		return getPage(searchParams, page, size);
 	}
 
 }

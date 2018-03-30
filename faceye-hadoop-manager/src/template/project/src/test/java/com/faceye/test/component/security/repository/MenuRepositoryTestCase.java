@@ -9,7 +9,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.security.entity.Menu;
 import com.faceye.component.security.repository.jpa.MenuRepository;
@@ -42,24 +42,24 @@ public class MenuRepositoryTestCase extends BaseRepositoryTestCase {
 		params.put("url", "ajax/test");
 		
 		Iterable<Menu> entities = this.menuRepository.findAll();
-		Assert.isTrue(entities.iterator().hasNext());
+		Assert.assertTrue(entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		Menu entity = new Menu();
 		this.menuRepository.save(entity);
-        this.menuRepository.delete(entity.getId());
+        this.menuRepository.deleteById(entity.getId());
         Iterable<Menu> entities = this.menuRepository.findAll();
-		Assert.isTrue(!entities.iterator().hasNext());
+		Assert.assertTrue(!entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		Menu entity = new Menu();
 		this.menuRepository.save(entity);
-		Menu menu=this.menuRepository.findOne(entity.getId());
-		Assert.isTrue(menu!=null);
+		Menu menu=this.menuRepository.findById(entity.getId()).get();
+		Assert.assertTrue(menu!=null);
 	}
 	
 	@Test
@@ -71,14 +71,14 @@ public class MenuRepositoryTestCase extends BaseRepositoryTestCase {
 	public void testGetRoot() throws Exception{
 	  Long parentId=null;
 	  List<Menu> roots=this.menuRepository.getRoots();
-	  Assert.isTrue(CollectionUtils.isNotEmpty(roots));
+	  Assert.assertTrue(CollectionUtils.isNotEmpty(roots));
 	}
 	
 	@Test
 	public void testGetRootByUserId() throws Exception{
 		Long userId=209L;
 		List<Menu> menus=this.menuRepository.getMenusByUserId(userId);
-		Assert.isTrue(CollectionUtils.isNotEmpty(menus)&&menus.size()==5);
+		Assert.assertTrue(CollectionUtils.isNotEmpty(menus)&&menus.size()==5);
 	}
 	
 }

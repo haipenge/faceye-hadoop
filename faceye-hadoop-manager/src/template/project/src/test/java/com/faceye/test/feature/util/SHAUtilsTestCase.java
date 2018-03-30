@@ -15,6 +15,6 @@ public class SHAUtilsTestCase extends BaseTestCase {
 		logger.debug(">>FaceYe -> sha is :"+sha);
 		//b1e6d52ecba7cbfd111d515e8db0011ed39de189
 		//b1e6d52ecba7cbfd111d515e8db0011ed39de189
-		Assert.isTrue(StringUtils.isNotEmpty(sha)&&StringUtils.equals(sha, "b1e6d52ecba7cbfd111d515e8db0011ed39de189"));
+		Assert.assertTrue(StringUtils.isNotEmpty(sha)&&StringUtils.equals(sha, "b1e6d52ecba7cbfd111d515e8db0011ed39de189"));
 	}
 }

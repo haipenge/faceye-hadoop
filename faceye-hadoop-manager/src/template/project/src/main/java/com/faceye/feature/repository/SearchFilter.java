@@ -35,7 +35,7 @@ public class SearchFilter {
 	 * searchParams中key的格式为OPERATOR_FIELDNAME
 	 */
 	public static Map<String, SearchFilter> parse(Map<String, Object> searchParams) {
-		Reporter reporter = BeanContextUtil.getInstance().getBean(Reporter.class);
+		Reporter reporter = BeanContextUtil.getBean(Reporter.class);
 		reporter.reporter(searchParams);
 		Map<String, SearchFilter> filters = Maps.newHashMap();
 		if (MapUtils.isEmpty(searchParams)) {
