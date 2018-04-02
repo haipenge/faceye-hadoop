@@ -17,8 +17,8 @@
 		<jetty.orbit.version>3.0.0.v201112011016</jetty.orbit.version>
 		<querydsl.version>3.4.2</querydsl.version>
 		<servlet-api.version>3.0-alpha-1</servlet-api.version>
-		<junit.version>4.11</junit.version>
-		<spring.version>4.1.1.RELEASE</spring.version>
+		<junit.version>4.12</junit.version>
+		<spring.version>4.3.9.RELEASE</spring.version>
 		<hadoop.version>2.8.0</hadoop.version>
 		<mongo-java-driver.version>2.13.0</mongo-java-driver.version>
 		<mongo-hadoop-core.version>1.4.2</mongo-hadoop-core.version>
