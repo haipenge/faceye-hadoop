@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+<property>
+  <name>xasecure.audit.db.is.enabled</name>
+  <value>true</value>
+</property>
+<property>
+  <name>xasecure.audit.db.is.async</name>
+  <value>true</value>
+</property>
+<property>        
+  <name>xasecure.audit.jpa.javax.persistence.jdbc.url</name>
+  <value>jdbc:mysql://10.12.12.141:3306/ranger_audit</value>
+</property>
+<property>              
+  <name>xasecure.audit.jpa.javax.persistence.jdbc.user</name>
+  <value>prnp</value>
+</property>
+<property>               
+  <name>xasecure.audit.jpa.javax.persistence.jdbc.password</name>
+  <value>prnp</value>
+</property>
+<property>
+  <name>xasecure.audit.log4j.is.enabled</name>
+  <value>true</value>
+</property>
+<property>
+  <name>xasecure.audit.log4j.is.async</name>
+<value>true</value>
+</property>
+</configuration>

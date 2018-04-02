@@ -70,7 +70,7 @@ public class UploadServlet extends HttpServlet {
 			response.setContentType("text/json");
 			writer.write("{\"url\":\"success\"}");
 			//从库中删除某一文件
-//			DocFileService docFileService=BeanContextUtil.getInstance().getBean(DocFileService.class);
+//			DocFileService docFileService=BeanContextUtil.getBean(DocFileService.class);
 //			DocFile docFile=docFileService.getDocFileByName(delfile);
 //			docFileService.remove(docFile);
 		} else if (request.getParameter("getthumb") != null && !request.getParameter("getthumb").isEmpty()) {
@@ -210,7 +210,7 @@ public class UploadServlet extends HttpServlet {
 //	}
 
 //	private String getUploadPath() {
-//		PropertyService propertyService=BeanContextUtil.getInstance().getBean(PropertyService.class);
+//		PropertyService propertyService=BeanContextUtil.getBean(PropertyService.class);
 //		String path=propertyService.get("upload.dir");
 //		String result = "";
 //		String dir = this.getTodayDir();

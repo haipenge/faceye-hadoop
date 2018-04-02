@@ -73,7 +73,7 @@ public class JspUtil {
     
 	public static String getHost(){
 		if(StringUtils.isEmpty(HOST)){
-			HOST=BeanContextUtil.getInstance().getBean(PropertyService.class).get("faceye.host");
+			HOST=BeanContextUtil.getBean(PropertyService.class).get("faceye.host");
 		}
 		return HOST;
 	}

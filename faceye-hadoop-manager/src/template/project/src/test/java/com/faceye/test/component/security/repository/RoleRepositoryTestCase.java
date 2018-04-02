@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.security.entity.Role;
 import com.faceye.component.security.repository.jpa.RoleRepository;
@@ -34,24 +34,24 @@ public class RoleRepositoryTestCase extends BaseRepositoryTestCase {
 		Role entity = new Role();
 		this.roleRepository.save(entity);
 		Iterable<Role> entities = this.roleRepository.findAll();
-		Assert.isTrue(entities.iterator().hasNext());
+		Assert.assertTrue(entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		Role entity = new Role();
 		this.roleRepository.save(entity);
-        this.roleRepository.delete(entity.getId());
+        this.roleRepository.deleteById(entity.getId());
         Iterable<Role> entities = this.roleRepository.findAll();
-		Assert.isTrue(!entities.iterator().hasNext());
+		Assert.assertTrue(!entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		Role entity = new Role();
 		this.roleRepository.save(entity);
-		Role role=this.roleRepository.findOne(entity.getId());
-		Assert.isTrue(role!=null);
+		Role role=this.roleRepository.findById(entity.getId()).get();
+		Assert.assertTrue(role!=null);
 	}
 
 	

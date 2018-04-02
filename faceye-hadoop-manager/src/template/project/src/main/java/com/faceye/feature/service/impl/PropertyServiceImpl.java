@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.faceye.feature.service.PropertyService;
-import com.faceye.feature.util.ServiceException;
+ 
 
 @Service
 public class PropertyServiceImpl implements PropertyService {
@@ -22,7 +22,7 @@ public class PropertyServiceImpl implements PropertyService {
 	private Logger log = LoggerFactory.getLogger(getClass());
 
 	@Override
-	public String get(String key) throws ServiceException {
+	public String get(String key)   {
 //		log.debug(">>-->key is:" + key);
 		String res = "";
 		if (properties == null) {
@@ -41,7 +41,7 @@ public class PropertyServiceImpl implements PropertyService {
 	
 
 	@Override
-	public String[] getKeys() throws ServiceException {
+	public String[] getKeys()   {
 		String keys[]=null;
 		if(properties!=null){
 			Enumeration en=properties.keys();

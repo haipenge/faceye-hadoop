@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+   <property>
+       <name>javax.jdo.option.ConnectionURL</name>
+       <value>jdbc:mysql://10.12.12.141:3306/hive_metastore_hadoop001?createDatabaseIfNotExist=true</value>
+       <description>JDBC connect string for a JDBC metastore </description>
+    </property>
+    <property>
+       <name>javax.jdo.option.ConnectionDriverName</name>
+       <value>com.mysql.jdbc.Driver</value>
+       <description>Driver class name for a JDBC metastore</description>
+    </property>
+    <property>
+       <name>javax.jdo.option.ConnectionUserName</name>
+       <value>prnp</value>
+       <description>username to use against metastore database</description>
+    </property>
+    <property>
+       <name>javax.jdo.option.ConnectionPassword</name>
+       <value>prnp</value>
+       <description>password to use against metastore database</description>
+    </property>
+    <property>
+      <name>datanucleus.autoCreateSchema</name>
+      <value>true</value>
+    </property>
+
+    <property>
+      <name>datanucleus.fixedDatastore</name>
+      <value>true</value>
+    </property>
+
+    <property>
+      <name>datanucleus.autoCreateTables</name>
+      <value>true</value>
+   </property>
+    <property>
+      <name>hive.metastore.warehouse.dir</name>
+      <value>/user/hive/warehouse</value>
+      <description>location of default database for the warehouse</description>
+   </property>
+   <property>
+      <name>hive.server2.thrift.bind.host</name>
+      <value>0.0.0.0</value>
+      <description>Bind host on which to run the HiveServer2 Thrift service.</description>
+   </property>
+   <property>
+   <name>hive.server2.authentication</name>
+   <value>NONE</value>
+   </property>
+   <property>
+     <name>hive.server2.gateway.model.enabled</name>
+	 <value>false</value>
+   </property>
+   <property>
+     <name>hive.server2.remote.host</name>
+	 <value>hd01.aspire.com.cn</value>
+   </property>
+   <property>
+     <name>hive.server2.remote.port</name>
+	 <value>10000</value>
+   </property>
+
+   <property>
+    <name>hive.metastore.kerberos.keytab.file</name>
+    <value>/home/hadoop001/tools/apache-hive-2.3.0-bin/conf/hive.keytab</value>
+  </property>
+  <property>
+    <name>hive.metastore.kerberos.principal</name>
+    <value>hive/hd01.aspire.com.cn@HADOOP.com</value>
+  </property>
+  <property>
+    <name>hive.server2.authentication.kerberos.keytab</name>
+    <value>/home/hadoop001/tools/apache-hive-2.3.0-bin/conf/hive.keytab</value>
+  </property>
+  <property>
+    <name>hive.server2.authentication.kerberos.principal</name>
+    <value>hive/hd01.aspire.com.cn@HADOOP.com</value>
+  </property>
+  <property>
+    <name>hive.server2.authentication.spnego.keytab</name>
+    <value>/home/hadoop001/tools/apache-hive-2.3.0-bin/conf/hive.keytab</value>
+  </property>
+  <property>
+    <name>hive.server2.authentication.spnego.principal</name>
+    <value>hive/hd01.aspire.com.cn@HADOOP.com</value>
+  </property>
+
+  <property>
+    <name>hive.server2.remote.user</name>
+    <value>hive</value>
+    <description>User for remote Hiveserver2.</description>
+  </property>
+  <property>
+    <name>hive.server2.remote.pwd</name>
+    <value>hive</value>
+    <description>Password for remote Hiveserver2.</description>
+  </property>
+  <property>
+    <name>hive.server2.remote.login_timeout</name>
+    <value>1800</value>
+    <description>Login timeout for remote Hiveserver2.</description>
+  </property>
+  <property>
+    <name>hive.server2.remote.use.ssl</name>
+    <value>false</value>
+    <description>Create a SSL connection to remote Hiveserver2.</description>
+  </property>
+  <property>
+    <name>hive.server2.remote.auth.type</name>
+    <value>sasl</value>
+    <description>Auth type from remote Hiveserver2. nosasl or kerberos or sasl or token.</description>
+  </property>
+  <property>
+    <name>hive.server2.remote.auth.principal</name>
+    <value>hive/hd01.aspire.com.cn@HADOOP.COM</value>
+    <description>Auth principal for remote Hiveserver2.</description>
+  </property>
+
+  <property>
+  <name>hive.synchronous.metadata.local.jdbcurl</name> <value>jdbc:hive2://hd01.aspire.com.cn:10000/;principal=hive/hd01.aspire.com.cn@HADOOP.COM</value>
+</property>
+<property>
+  <name>hive.synchronous.metadata.remote.jdbcurl</name>    <value>jdbc:hive2://hd01.aspire.com.cn:10000/;principal=hive/hd01.aspire.com.cn@HADOOP.COM</value>
+</property>
+<!--两次同步的间隔时间，单位为毫秒，默认12小时同步一次-->
+<property>
+  <name>hive.synchronous.metadata.intervaltime</name>
+  <value>43200000</value>
+</property>
+<!--启动hiveserver2之后过多久开始进行同步，默认为一分钟-->
+<property>
+  <name>hive.synchronous.metadata.delaytime</name>
+  <value>60000</value>
+</property>
+
+
+</configuration>

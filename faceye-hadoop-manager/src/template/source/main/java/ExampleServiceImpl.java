@@ -18,7 +18,7 @@ import com.faceye.component.@component.name@.repository.jpa.@entity.name@Reposit
 import com.faceye.feature.repository.SearchFilter;
 import com.faceye.component.@component.name@.service.@entity.name@Service;
 import com.faceye.feature.service.impl.BaseServiceImpl;
-import com.faceye.feature.util.ServiceException;
+ 
 
 @Service
 public class @entity.name@ServiceImpl extends BaseServiceImpl<@entity.name@, Long, @entity.name@Repository> implements @entity.name@Service {

@@ -15,7 +15,7 @@ import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.WebAttributes;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.util.UrlUtils;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.security.util.AjaxSecurity;
 /**
@@ -76,7 +76,7 @@ public class AjaxSimpleUrlAuthenticationFailureHandler implements Authentication
 	 *            the failure URL, for example "/loginFailed.jsp".
 	 */
 	public void setDefaultFailureUrl(String defaultFailureUrl) {
-		Assert.isTrue(UrlUtils.isValidRedirectUrl(defaultFailureUrl), "'" + defaultFailureUrl + "' is not a valid redirect URL");
+		Assert.assertTrue(UrlUtils.isValidRedirectUrl(defaultFailureUrl), "'" + defaultFailureUrl + "' is not a valid redirect URL");
 		this.defaultFailureUrl = defaultFailureUrl;
 	}
 

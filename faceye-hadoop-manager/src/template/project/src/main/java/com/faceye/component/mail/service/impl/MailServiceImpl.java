@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 
 import com.faceye.component.mail.service.MailService;
 import com.faceye.component.mail.service.wrap.Mail;
-import com.faceye.feature.util.ServiceException;
+ 
 
 
 @Service
@@ -49,7 +49,7 @@ public class MailServiceImpl implements MailService{
 	 * @todo
 	 * @param mail
 	 * @return
-	 * @throws ServiceException
+	 * @ 
 	 * @author:@haipenge
 	 * haipenge@gmail.com
 	 * 2013年12月29日

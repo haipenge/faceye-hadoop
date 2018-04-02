@@ -19,7 +19,7 @@ import com.faceye.component.security.repository.jpa.ResourceRepository;
 import com.faceye.component.security.service.ResourceService;
 import com.faceye.component.security.service.RoleService;
 import com.faceye.feature.service.impl.BaseServiceImpl;
-import com.faceye.feature.util.ServiceException;
+ 
 
 @Service
 public class ResourceServiceImpl extends BaseServiceImpl<Resource, Long, ResourceRepository> implements ResourceService,FilterInvocationSecurityMetadataSource {
@@ -33,13 +33,13 @@ public class ResourceServiceImpl extends BaseServiceImpl<Resource, Long, Resourc
 	}
 	
 	@Override
-	public void remove(Long id) throws ServiceException {
+	public void remove(Long id)   {
 		Resource resource=this.get(id);
 		this.remove(resource);
 	}
 
 	@Override
-	public void remove(Resource entity) throws ServiceException {
+	public void remove(Resource entity)   {
 		dao.delete(entity);
 	}
 

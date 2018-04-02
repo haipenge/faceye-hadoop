@@ -36,12 +36,12 @@ public class Path {
 	 * @author:@haipenge haipenge@gmail.com 2014年2月20日
 	 */
 	public static String getPath() {
-		PropertyService propertyService=BeanContextUtil.getInstance().getBean(PropertyService.class);
+		PropertyService propertyService=BeanContextUtil.getBean(PropertyService.class);
 		return getPath(propertyService.get("upload.dir"));
 	}
 
 	public static String getPath(String parent) {
-		PropertyService propertyService=BeanContextUtil.getInstance().getBean(PropertyService.class);
+		PropertyService propertyService=BeanContextUtil.getBean(PropertyService.class);
 		String path = "";
 		if (StringUtils.isEmpty(parent)) {
 			parent = propertyService.get("upload.dir");
@@ -65,7 +65,7 @@ public class Path {
 	 */
 	public static String getPathByFilename(String filename){
 		String path="";
-		PropertyService propertyService=BeanContextUtil.getInstance().getBean(PropertyService.class);
+		PropertyService propertyService=BeanContextUtil.getBean(PropertyService.class);
 		if(StringUtils.isNotEmpty(filename)&&filename.length()>=8){
 			String dir=filename.substring(0, 8);
 			path=propertyService.get("upload.dir")+dir+"/";
